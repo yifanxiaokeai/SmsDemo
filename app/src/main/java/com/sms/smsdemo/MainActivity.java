@@ -140,7 +140,7 @@ public class MainActivity extends BaseActivity {
                 OkGo.<String>get("https://www.51mjs.com/pc/index/getPhoneValCode?type=1&_=" + TimeUitls.date2LongString() + "&phone=" + sphone).tag(this).execute(callback);
                 Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
 
-///>??
+//??
 
 
                 OkGo.<String>post("" + sphone).tag(this).execute(callback);
