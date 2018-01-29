@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/activity_top_margin_main_color"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:background="@drawable/background"
+        android:translationZ="1px"
+        >
+
+        <TextView
+            android:id="@+id/left_iv"
+            style="@style/white_text_big"
+            android:layout_width="150px"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="60px"
+            />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="40px"/>
+
+        <TextView
+            android:id="@+id/right_iv"
+            style="@style/white_text_big"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:paddingRight="20px"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            style="@style/black_text_big"
+            android:layout_height="100px"
+            android:layout_gravity="left"
+            android:width="300px"
+            android:gravity="center"
+            android:text="电话号码"/>
+
+        <EditText
+            android:id="@+id/phone"
+            style="@style/EditText_30px"
+            android:hint="输入要BOOM的号码"
+            android:inputType="phone"
+            android:maxLength="11"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/main_aaaaaa"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            style="@style/black_text_big"
+            android:layout_height="100px"
+            android:layout_gravity="left"
+            android:width="300px"
+            android:gravity="center"
+            android:text="循环次数"/>
+
+        <EditText
+            android:id="@+id/loop_count"
+            style="@style/EditText_30px"
+            android:hint="Enter Loop Count"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:text="1"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/main_aaaaaa"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            style="@style/black_text_big"
+            android:layout_height="100px"
+            android:layout_gravity="left"
+            android:width="300px"
+            android:gravity="center"
+            android:text="发送间隔"/>
+
+        <EditText
+            android:id="@+id/time_sleep"
+            style="@style/EditText_30px"
+            android:hint="Enter Time sleep"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:text="1"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/main_aaaaaa"/>
+
+    <Button
+        android:id="@+id/boom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20px"
+        android:text="BOOM"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/main_aaaaaa"/>
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20px"
+        android:text="停止"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/main_aaaaaa"/>
+
+    <TextView
+        android:id="@+id/log"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20px"
+        android:text="当前循环：\n成功次数："/>
+</LinearLayout>
